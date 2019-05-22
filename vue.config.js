@@ -1,7 +1,11 @@
 'use strict'
 const path = require('path')
-const defaultSettings = require('./src/settings.js')
+const webpack = require('webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
+const defaultSettings = require('./src/settings.js')
+const cesiumSource = './node_modules/cesium/Source'
+const cesiumWorkers = '../Build/Cesium/Workers'
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
@@ -50,10 +54,30 @@ module.exports = {
     // provide the app's title in webpack's name field, so that
     // it can be accessed in index.html to inject the correct title.
     name: name,
+    output: {
+      sourcePrefix: ' ' // 1
+    },
+    amd: { // 2
+      toUrlUndefined: true
+    },
     resolve: {
       alias: {
-        '@': resolve('src')
+        '@': resolve('src'),
+        'cesium': path.resolve(__dirname, cesiumSource) // 3
       }
+    },
+    plugins: [ // 4
+      new CopyWebpackPlugin([{ from: path.join(cesiumSource, cesiumWorkers), to: 'Workers' }]),
+      new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Assets'), to: 'Assets' }]),
+      new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' }]),
+      new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty/Workers'), to: 'ThirdParty/Workers' }]),
+      new webpack.DefinePlugin({ // 5
+        CESIUM_BASE_URL: JSON.stringify('./')
+      })
+    ],
+    module: {
+      unknownContextCritical: /^.\/.*$/,
+      unknownContextCritical: false // 6
     }
   },
   chainWebpack(config) {

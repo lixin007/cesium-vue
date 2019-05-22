@@ -46,14 +46,28 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
-    children: [{
-      path: 'dashboard',
-      name: 'Dashboard',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
-    }]
+    redirect: '/cesium',
+    children: [
+      {
+        path: 'cesium',
+        component: () => import('@/views/cesium/index'),
+        name: 'Cesium',
+        meta: { title: 'Cesium', icon: 'dashboard', affix: true }
+      }
+    ]
   },
+
+  // {
+  //   path: '/',
+  //   component: Layout,
+  //   redirect: '/dashboard',
+  //   children: [{
+  //     path: 'dashboard',
+  //     name: 'Dashboard',
+  //     component: () => import('@/views/dashboard/index'),
+  //     meta: { title: 'Dashboard', icon: 'dashboard' }
+  //   }]
+  // },
 
   {
     path: '/example',
