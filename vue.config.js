@@ -63,6 +63,7 @@ module.exports = {
     resolve: {
       alias: {
         '@': resolve('src'),
+        'earthApiClass':path.resolve(__dirname, 'earthApiClass'),
         'cesium': path.resolve(__dirname, cesiumSource) // 3
       }
     },

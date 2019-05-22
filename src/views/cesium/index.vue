@@ -7,7 +7,7 @@
 import Cesium from 'cesium/Cesium'
 // noinspection ES6UnusedImports
 import widget from 'cesium/Widgets/widgets.css'
-import earthShell from '../../../earthApiClass/EarthShell'
+import earthShell from 'earthApiClass/EarthShell'
 export default {
   name: "cesiumContainer",
   mounted() {
@@ -18,20 +18,10 @@ export default {
   methods: {
     cesiumInit() {
       //let viewer = new Cesium.Viewer('cesiumContainer');
-      let viewer = new earthShell('cesiumContainer',{
-        showEagleEyeMap: true
-      });
+       let viewer = new earthShell('cesiumContainer',{
+         showEagleEyeMap: true
+       });
     }
   }
 }
 </script>
-
-<style scoped>
-   #cesiumContainer {
-    width: 100%;
-    height: calc(100vh - 50px);
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-</style>
