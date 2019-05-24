@@ -12,7 +12,7 @@
       <div>
         <keep-alive>{{now}}</keep-alive>
       </div>
-      <mycomponent></mycomponent>
+
       <input @keyup.alt.67="runOK('bb')"  type="number" v-model.lazy.number="a"  >{{a}} {{ typeof(a) }}
       <el-button type="primary" plain  @click='runOK("666"),runOK("777")' :style="{margin: '5px'}">{{btnText}}</el-button>
       <form v-on:submit.prevent="runOK('555')">
@@ -25,11 +25,6 @@
 <script>
     export default {
       name: "test0001",
-      components: {
-        'mycomponent': {
-          template: `<div>这是一个局部的自定义组件，只能在当前Vue实例中使用</div>`,
-        }
-      },
       data(){
         return{
           css_a1:'a1',

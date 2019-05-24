@@ -3,14 +3,20 @@
     <el-input v-model="inputValue" placeholder="请输入内容" class="input-margin"></el-input>
     <div class="input-margin">{{inputText}}</div>
     <el-input v-model="message" placeholder="computed" class="input-margin"></el-input>
-
-    <el-button type="primary" plain  @click='btnEvent()'>确定</el-button>
     <div class="input-margin">{{reversedMessage}}</div>
+    <el-button type="primary" plain  @click='btnEvent()'>确定</el-button>
+    <MyComponents
+      name="0001"
+    ></MyComponents>
   </div>
 </template>
 
 <script>
+  import MyComponents from "@/components/MyComponents/index.vue"
     export default {
+      components:{
+        MyComponents
+      },
       name: "test0002",
       data(){
         return{
