@@ -5,9 +5,9 @@
     <el-input v-model="message" placeholder="computed" class="input-margin"></el-input>
     <div class="input-margin">{{reversedMessage}}</div>
     <el-button type="primary" plain  @click='btnEvent()'>确定</el-button>
-    <MyComponents
+    <my-components
       name="0001"
-    ></MyComponents>
+    ></my-components>
   </div>
 </template>
 
@@ -15,7 +15,7 @@
   import MyComponents from "@/components/MyComponents/index.vue"
     export default {
       components:{
-        MyComponents
+        "my-components":MyComponents
       },
       name: "test0002",
       data(){
