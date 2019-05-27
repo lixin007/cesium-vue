@@ -1,19 +1,30 @@
 <template>
   <div>
-    props:{{name}},{{level}},{{age}}
+    <input type="button" value="子组件触发" @click="target">
+    名称：{{name}}, 水平：{{level}}, 年纪：{{age}}
     <br>
-    attrs: {{$attrs['gender']}}
+    <div>这是个h1标题:{{title}}</div>
+    <br>
+    <div>{{msg}}</div>
   </div>
 </template>
 
 <script>
     export default {
       name: "c-child",
+      inheritAttrs: false,  //不在html显示没定义的属性
       props: {
-        name: String,
+        title: {
+          type: [String, Number],
+          default: "title001",
+        },
+        name: {
+          type: [String, Number],
+          default: "hong",
+        },
         level: {
-          type: Number,
-          default: 5,
+          type: Array,
+          default: [3,5],
         },
         age:{
           type: Number,
@@ -21,6 +32,20 @@
             return 20
           }
         },
+        msg:String
+      },
+      data(){
+        return {
+          texts:'这是子组件的数据，将有子组件操作触发传给父组件'
+        }
+      },
+      methods:{
+        target:function(){ //有子组件的事件触发 自定义事件childevent
+          this.$emit('childevent',this.texts);//触发一个在子组件中声明的事件 childEvnet
+        }
+      },
+      mounted:function(){
+        console.log(this.$attrs); //只要父组件未被定义的属性就会传到$attrs
       }
     }
 </script>
