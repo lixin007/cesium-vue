@@ -5,7 +5,6 @@
 </template>
 
 <script>
-  import cChild from "@/components/MyComponents/c-child.vue"
     export default {
         name: "c-father",
         data(){
@@ -18,7 +17,7 @@
           }
         },
         components:{
-          "c-child": cChild
+          "c-child": () => import('@/components/MyComponents/c-child.vue')
         },
         methods:{
           wathChildEvent:function(vals){//直接监听 又子组件触发的事件，参数为子组件的传来的数据

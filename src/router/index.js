@@ -61,17 +61,25 @@ export const constantRoutes = [
     ]
   },
 
-  // {
-  //   path: '/',
-  //   component: Layout,
-  //   redirect: '/dashboard',
-  //   children: [{
-  //     path: 'dashboard',
-  //     name: 'Dashboard',
-  //     component: () => import('@/views/dashboard/index'),
-  //     meta: { title: 'Dashboard', icon: 'dashboard' }
-  //   }]
-  // },
+  {
+    path: '/cesium',
+    component: Layout,
+    redirect: '/cesium/measure',
+    name: 'main-component',
+    alwaysShow: true,
+    meta: {
+      title: '相关工具',
+      icon: 'tree'
+    },
+    children: [
+      {
+        path: 'measure',
+        name: 'measure',
+        component: () => import('@/views/cesium/measure'),
+        meta: { title: '测量工具', icon: 'dashboard',keepAlive: true }
+      }
+    ]
+  },
 
   {
     path: '/excel',
