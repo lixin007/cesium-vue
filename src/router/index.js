@@ -77,6 +77,12 @@ export const constantRoutes = [
         name: 'measure',
         component: () => import('@/views/cesium/measure'),
         meta: { title: '测量工具', icon: 'dashboard',keepAlive: true }
+      },
+      {
+        path: 'draw',
+        name: 'draw',
+        component: () => import('@/views/cesium/draw'),
+        meta: { title: '标绘工具', icon: 'dashboard',keepAlive: true }
       }
     ]
   },

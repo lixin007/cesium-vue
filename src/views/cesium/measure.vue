@@ -4,8 +4,8 @@
     </div>
     <div class="toolbar">
       <el-button-group>
-        <el-button type="primary" icon="el-icon-edit" size="mini" plain  title="长度测量" @click="createMeasureEvent('drawLine')"></el-button>
-        <el-button type="primary" icon="el-icon-share" size="mini" plain title="面积测算" @click="createMeasureEvent('drawPloy')"></el-button>
+        <el-button type="primary" icon="el-icon-ump-huizhi" size="mini" plain  title="长度测量" @click="createMeasureEvent('drawLine')"></el-button>
+        <el-button type="primary" icon="el-icon-ump-draw-polygon" size="mini" plain title="面积测算" @click="createMeasureEvent('drawPloy')"></el-button>
         <el-button type="primary" icon="el-icon-delete" size="mini" plain title="清理结果" @click="createMeasureEvent('cleanUp')"></el-button>
       </el-button-group>
     </div>
@@ -49,6 +49,7 @@ export default {
     position: absolute;
     top: 10px;
     left: 10px;
+    /*width: 75px;*/
 
     .el-button-group {
       .el-button {
@@ -56,6 +57,11 @@ export default {
         padding: 5px 10px !important;
       }
     }
+
+    /*.el-button--primary.is-plain {
+      color: #22abff;
+      background: #1f2d3d;
+    }*/
   }
 
 </style>

@@ -4,7 +4,8 @@
     <div class="input-margin">{{inputText}}</div>
     <el-input v-model="message" placeholder="computed" class="input-margin"></el-input>
     <div class="input-margin">{{reversedMessage}}</div>
-    <el-button type="primary" plain  @click='btnEvent()'>确定</el-button>
+    <el-button type="primary" plain  @click='btnEvent()'>
+      <svg-icon icon-class="dashboard" style="margin: 0 5px;"/>确定</el-button>
     <my-components
       name="0001"
     ></my-components>

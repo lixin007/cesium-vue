@@ -147,6 +147,7 @@ export default class EarthShell {
    * @returns {DrawHelper}
    */
   DrawHelper(options) {
+    console.log(options)
     return new DrawHelper(_viewer, options);
   }
 
