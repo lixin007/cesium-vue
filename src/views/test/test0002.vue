@@ -8,7 +8,7 @@
       <svg-icon icon-class="dashboard" style="margin: 0 5px;"/>确定</el-button>
     <my-components
       name="0001"
-    ></my-components>
+    ><span slot='header' style="color: red;">自定义标题</span></my-components>
   </div>
 </template>
 
@@ -41,6 +41,9 @@
       methods: {
         btnEvent: function(param){
           this.inputValue += 1;
+          console.log(vm.data);
+          console.log(vm.props);
+          console.log(vm.el);
         }
       }
     }
