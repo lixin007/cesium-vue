@@ -19,14 +19,31 @@
         <input type="submit" value="提交">
       </form>
 
+     <!-- <ul>
+        <li  v-for="(item,index)  in syear" :key="index" class="a3">
+          <b>{{item}}年</b>：<br/>
+          {{Math.floor(Math.random()*5)}}:{{Math.floor(Math.random()*3)}}<br/>
+        {{Math.floor(Math.random()*2)}}:{{Math.floor(Math.random()*3)}}
+        </li>
+      </ul>-->
+       <ul>
+          <li  v-for="(item,index)  in svalue" :key="index" class="a3">
+              {{item}}
+          </li>
+      </ul>
+
+
     </div>
 </template>
 
 <script>
+    import { person,try66 }  from "@/utils/glrandom"
     export default {
       name: "test0001",
       data(){
         return{
+          syear: [2015,2016,2017,2018],
+          svalue: 5,
           css_a1:'a1',
           css_a2:"a2",
           css_all: {
@@ -56,6 +73,12 @@
           btnValue:"执行成功"
         }
       },
+      mounted() {
+        //this.tryrun("666")
+        //alert(try66());
+        const Person = new person()
+        // console.log(Person.say())
+      },
       computed: {
         RandomColor(index) {
           let r, g, b;
@@ -64,6 +87,18 @@
           b = Math.floor(Math.random() * 256);
           return "rgb(" +r + ',' +g+ ',' +b+ ")";
         },
+        // RandomNum(){
+        //   let random = new GLRandom(40, 90)
+        //   // 调整概率
+        //   random.percentage = new Map([
+        //     [41,0.02],   // 调整值为41的数值，概率为20%
+        //     [46,0.01],   // 调整值为46的数值，概率为50%
+        //     [90,0.05]   // 调整值为90的数值，概率为5%
+        //   ]);
+        //   // 生成值区间
+        //   random.range()
+        //   return random.create()
+        // },
         now: function(){
           return Date.now()
         },
@@ -77,6 +112,10 @@
       methods: {
         runOK: function(param){
           alert(param+this.btnValue);
+        },
+        tryrun(){
+          let Person = new Person('leon', 30)
+          console.log(Person.say())
         }
       }
     }
@@ -95,5 +134,11 @@
     margin: 5px;
     background: red;
     color: #fff;
+  }
+  .a3 {
+    margin: 10px;
+  }
+  .a4 {
+    margin: 5px;
   }
 </style>
