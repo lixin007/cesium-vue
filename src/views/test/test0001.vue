@@ -37,7 +37,7 @@
 </template>
 
 <script>
-    import { person,try66 }  from "@/utils/glrandom"
+    import { person,try66,box }  from "@/utils/glrandom"
     export default {
       name: "test0001",
       data(){
@@ -76,8 +76,10 @@
       mounted() {
         //this.tryrun("666")
         //alert(try66());
-        const Person = new person()
-        // console.log(Person.say())
+        const Person = new person('leon',30)
+         console.log(Person.say())
+        const Box = new box(3,5)
+        console.log(Box.sum())
       },
       computed: {
         RandomColor(index) {

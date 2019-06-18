@@ -67,23 +67,47 @@ export default class GLRandom {
 }
 
 */
-const person = (function () {
-  class person {//定义了一个名字为Person的类
-    constructor() {
-      // this.name = name;
-      // this.age = age;
-    }
-
-    say() {
-      //return "我的名字叫" + this.name+"今年"+this.age+"岁了";
-      // alert(this.name + this.age)
-    }
+export class person {//定义了一个名字为Person的类
+  constructor(name,age) {
+     this.name = name;
+     this.age = age;
   }
-  return person;
-})();
 
-const try66 = function(){
+  say() {
+    return "我的名字叫" + this.name+"今年"+this.age+"岁了";
+    //alert(this.name + this.age)
+  }
+}
+
+export class box{
+  constructor(num1,num2){
+    this.num1 = num1;
+    this.num2 = num2;
+  }
+  sum(){
+    return this.num1+this.num2;
+  }
+}
+
+
+// export const person = (function () {
+//   class person {//定义了一个名字为Person的类
+//     constructor(name,age) {
+//        this.name = name;
+//        this.age = age;
+//     }
+//
+//     say() {
+//       return "我的名字叫" + this.name+"今年"+this.age+"岁了";
+//        //alert(this.name + this.age)
+//     }
+//   }
+//   return person;
+// })();
+
+
+export const try66 = function(){
   return "666"
 }
 
-export { person, try66 };
+//export { person, try66 };
