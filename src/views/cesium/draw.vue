@@ -14,9 +14,9 @@
     </div>
   </div>
 </template>
-
 <script>
-  import earthShell from 'earthApiClass/EarthShell'
+
+  import earthShell from 'earthFrame/EarthShell'
   export default {
     name: "cesiumContainer",
     data() {

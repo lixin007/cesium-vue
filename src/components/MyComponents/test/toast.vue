@@ -18,7 +18,7 @@
       }
     },
     created () {
-      // this.toastPlugin()
+       this.toastPlugin()
     },
     components: {
     },

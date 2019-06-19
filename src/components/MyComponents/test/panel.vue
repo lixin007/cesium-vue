@@ -45,6 +45,7 @@
     background: #ddd;
     border-radius: 8px;
     margin-right: 10px;
+    text-align: center;
   }
   .number-panel ul li input {
     display: none;

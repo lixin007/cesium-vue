@@ -7,7 +7,7 @@
 import Cesium from 'cesium/Cesium'
 // noinspection ES6UnusedImports
 import widget from 'cesium/Widgets/widgets.css'
-import earthShell from 'earthApiClass/EarthShell'
+import earthShell from 'earthFrame/EarthShell'
 export default {
   name: "cesiumContainer",
   mounted() {
