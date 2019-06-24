@@ -32,6 +32,8 @@
           </li>
       </ul>
 
+      <svg-icon icon-class="password" />
+      <my-try></my-try>
 
     </div>
 </template>

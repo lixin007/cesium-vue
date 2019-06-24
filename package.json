@@ -18,6 +18,7 @@
     "axios": "0.18.0",
     "cesium": "^1.53.0",
     "cesium-navigation-es6": "^1.0.8",
+    "countup.js": "^2.0.4",
     "element-ui": "2.7.2",
     "jquery": "^3.3.1",
     "js-cookie": "2.2.0",
