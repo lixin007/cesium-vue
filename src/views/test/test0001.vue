@@ -34,12 +34,23 @@
 
       <svg-icon icon-class="password" />
       <my-try></my-try>
+      <ElAlertTwo
+        title="成功提示的文案666"
+        type="success">
+      </ElAlertTwo>
+      <el-alert
+        title="成功提示的文案"
+        type="success">
+      </el-alert>
+      <Button>001</Button>
 
     </div>
 </template>
 
 <script>
     import { person,try66,box }  from "@/utils/glrandom"
+    import alertTwo from "@/components/alert/src/main"
+    import { Button, Select } from 'element-ui'
     export default {
       name: "test0001",
       data(){
@@ -75,6 +86,7 @@
           btnValue:"执行成功"
         }
       },
+      components: { alertTwo },
       mounted() {
         //this.tryrun("666")
         //alert(try66());

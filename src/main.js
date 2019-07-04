@@ -13,6 +13,7 @@ import store from './store'
 import router from './router'
 
 import '@/icons' // icon
+import '@/components/alert/'
 import '@/permission' // permission control
 import '@/assets/icon/iconfont.css' //第三方图标
 

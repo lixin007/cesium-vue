@@ -8,6 +8,7 @@
 
 <script>
   import cFather from "@/components/MyComponents/c-father.vue"
+  import {Point} from "@/utils/myutils"
   export default {
     name: "test0003",
     data(){
@@ -21,6 +22,12 @@
       this.$nextTick(() =>{
         console.log(this.$refs.panel.$el);
       })
+    },
+    mounted() {
+      const p = new Point(1,2);
+      p.y = 3
+      p.showValue()
+      p.showC()
     },
     components: {
       "c-father": cFather

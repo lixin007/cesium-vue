@@ -5,10 +5,15 @@ import { resetRouter } from '@/router'
 const state = {
   token: getToken(),
   name: '',
-  avatar: ''
+  avatar: '',
+  tryvalue: '66666' //测试新值
 }
 
 const mutations = {
+  SET_TRY: (state, value) => { //测试方法
+    state.tryValue = value
+    alert(state.tryValue)
+  },
   SET_TOKEN: (state, token) => {
     state.token = token
   },
@@ -22,6 +27,9 @@ const mutations = {
 
 const actions = {
   // user login
+  trymethod({ commit }, value) { //测试action
+    commit('SET_TRY', value)
+  },
   login({ commit }, userInfo) {
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {

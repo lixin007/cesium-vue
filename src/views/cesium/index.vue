@@ -17,10 +17,10 @@ export default {
   },
   methods: {
     cesiumInit() {
-      //let viewer = new Cesium.Viewer('cesiumContainer');
-       let viewer = new earthShell('cesiumContainer',{
-         showEagleEyeMap: true
-       });
+      let viewer = new Cesium.Viewer('cesiumContainer');
+      //  let viewer = new earthShell('cesiumContainer',{
+      //    showEagleEyeMap: true
+      //  });
     }
   }
 }
