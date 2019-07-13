@@ -1,18 +1,37 @@
 <template>
   <div>
-    <my-table
-      :dataSource="dataSource"
-      :columns="columns"
-    >
-    </my-table>
-    <el-button type="info" plain  @click='test'>测试</el-button><br/>
-    <div>{{tryvalue}}</div>
+    <!--<my-table-->
+      <!--:dataSource="dataSource"-->
+      <!--:columns="columns"-->
+    <!--&gt;-->
+    <!--</my-table>-->
+    <!--<el-button type="info" plain  @click='test'>测试</el-button><br/>-->
+    <!--<div>{{tryvalue}}</div>-->
     <div>{{count}}</div>
+    <li v-for="(item, index) in picdata">
+      <img :src="item.src"/>
+    </li>
+
+    {{ab}}
   </div>
 
 </template>
 <script>
+  const  picdata = [{
+    src: '404_images/404.png'
+  },{
+    src: '404_images/404_cloud.png'
+  },{
+    src: '404_images/404.png'
+  },{
+    src: '404_images/404_cloud.png'
+  },{
+    src: '404_images/404.png'
+  },{
+    src: '404_images/404_cloud.png'
+  }]
 
+  const bb =require("@/assets/404_images/404.png")
   import { mapGetters } from 'vuex'
 
   export default {
@@ -20,6 +39,29 @@
     data () {
       return {
         dataSource:[], // 数据源
+         aa:require("@/assets/404_images/404.png"),
+         ab: bb,
+        ac:[1,2,3],
+        picdata2:'',
+        picdata: [{
+          id:1,
+          src: '404_images/404.png'
+        },{
+          id:2,
+          src: '404_images/404_cloud.png'
+        },{
+          id:3,
+          src: '404_images/404.png'
+        },{
+          id:4,
+          src: '404_images/404_cloud.png'
+        },{
+          id:5,
+          src: '404_images/404.png'
+        },{
+          id:6,
+          src: '404_images/404_cloud.png'
+        }],
         columns: [{
           hasSort: false, //<Boolean> 是否排序
           isShow: true, //<Boolean> 是否展示
@@ -62,6 +104,20 @@
     methods: {
       test() {
         this.$store.dispatch('user/trymethod', 'mobile') //触发
+      },
+      test2(){
+        const acc = this.ac.map((item,index,arr)=>{
+          return item*item
+        })
+        this.picdata.forEach((item,index,arr)=>{
+          item.src = require("@/assets/"+ item.src)
+          // return {
+          //   id: item.id,
+          //   src: require("@/assets/"+ item.src)
+          // }
+        })
+        console.log(this.picdata)
+        console.log(acc)
       }
     },
     computed: {
@@ -72,7 +128,9 @@
         return this.$store.state.user.tryvalue
       }
     },
-
+    mounted() {
+      this.test2()
+    }
   }
 </script>
 <style scoped>
