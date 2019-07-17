@@ -12,7 +12,6 @@
       <img :src="item.src"/>
     </li>
 
-    {{ab}}
   </div>
 
 </template>
