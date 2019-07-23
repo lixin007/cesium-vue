@@ -17,6 +17,18 @@ import '@/components/alert/'
 import '@/permission' // permission control
 import '@/assets/icon/iconfont.css' //第三方图标
 
+import ECharts from 'vue-echarts/components/ECharts'
+import "echarts/lib/chart/bar"
+import "echarts/lib/chart/line"
+import "echarts/lib/chart/pie"
+import "echarts/lib/component/tooltip"
+import "echarts/lib/component/legend"
+import "echarts/lib/component/markPoint"
+import "echarts/lib/component/markLine"
+import "echarts/lib/component/graphic"
+import 'echarts/lib/component/dataZoom'
+Vue.component('chart', ECharts)
+
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
