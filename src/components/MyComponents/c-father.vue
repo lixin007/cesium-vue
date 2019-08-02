@@ -1,6 +1,7 @@
 <template>
   <div>
-    <c-child :name="name" :age="age" :level="level" :title="title" :msg="msg"  @childevent='wathChildEvent'></c-child>
+    <c-child :name.sync="name" :level="level" :title="title" :msg="msg"  @childevent='wathChildEvent'></c-child>
+    <button @click="change" style="margin-top: 20px;">改变</button>
   </div>
 </template>
 
@@ -21,8 +22,12 @@
         },
         methods:{
           wathChildEvent:function(vals){//直接监听 又子组件触发的事件，参数为子组件的传来的数据
+            console.log("vals:")
             console.log(vals);//结果：这是子组件的数据，将有子组件操作触发传给父组件
             this.msg = vals;
+          },
+          change() {
+            this.name = '123';
           }
       }
     }

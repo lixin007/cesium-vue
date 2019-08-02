@@ -36,15 +36,19 @@
       },
       data(){
         return {
-          texts:'这是子组件的数据，将有子组件操作触发传给父组件'
+          texts:'这是子组件的数据，将有子组件操作触发传给父组件',
+          text2:"1111"
         }
       },
       methods:{
         target:function(){ //有子组件的事件触发 自定义事件childevent
           this.$emit('childevent',this.texts);//触发一个在子组件中声明的事件 childEvnet
+          this.$emit('update:name', "leon");
+
         }
       },
       mounted:function(){
+        console.log("attrs:")
         console.log(this.$attrs); //只要父组件未被定义的属性就会传到$attrs
       }
     }

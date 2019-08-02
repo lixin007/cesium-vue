@@ -7,11 +7,13 @@
 </template>
 
 <script>
+  // import jsonData from '@/json/try01'
   export default {
     name: 'HelloWorld',
     data () {
       return {
         orgOptions: {},
+        jsonData: require("@/json/try01")
       }
     },
     methods: {
@@ -19,6 +21,8 @@
       }
     },
     mounted() {
+      // console.log(jsonData)
+      console.log(this.jsonData)
       this.orgOptions = {
         legend: {},
         tooltip: {
