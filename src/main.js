@@ -52,6 +52,8 @@ require('video.js/dist/video-js.css')
 require('vue-video-player/src/custom-theme.css')
 Vue.use(VideoPlayer)
 
+
+
 new Vue({
   el: '#app',
   router,
