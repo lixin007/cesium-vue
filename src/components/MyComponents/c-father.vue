@@ -1,6 +1,8 @@
 <template>
   <div>
+
     <c-child :name.sync="name" :level="level" :title="title" :msg="msg"  @childevent='wathChildEvent'></c-child>
+    <c-child2/>
     <button @click="change" style="margin-top: 20px;">改变</button>
   </div>
 </template>
@@ -18,7 +20,8 @@
           }
         },
         components:{
-          "c-child": () => import('@/components/MyComponents/c-child.vue')
+          "c-child": () => import('@/components/MyComponents/c-child.vue'),
+          "c-child2": () => import('@/components/MyComponents/c-child2.vue')
         },
         methods:{
           wathChildEvent:function(vals){//直接监听 又子组件触发的事件，参数为子组件的传来的数据
