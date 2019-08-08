@@ -33,7 +33,8 @@
       </ul>
 
       <svg-icon icon-class="password" />
-      <my-try></my-try>
+      <my-try colorType="a-danger"></my-try>
+      {{$msg}}
       <ElAlertTwo
         title="成功提示的文案666"
         type="success">
