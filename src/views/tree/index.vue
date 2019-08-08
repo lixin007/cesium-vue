@@ -118,18 +118,37 @@ export default {
   }
 
   .one{
+    &:before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      background: green;
+      background: linear-gradient(135deg,transparent 15px, green 0)top left;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      background: linear-gradient(135deg,transparent 15px,#003a00 5%, green 100%)top left;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+    position: relative;
     height: 200px;
     width: 200px;
     margin: 10px auto;
     line-height: 200px;
-    background: yellowgreen;
-    background:
-      linear-gradient(0deg,#000 1px, yellowgreen 3px)bottom right,
-      linear-gradient(0deg,#000 1px, yellowgreen 3px)top right,
-        linear-gradient(135deg,transparent 15px, yellowgreen 20px)top left,
-      linear-gradient(135deg,transparent 14px, #000000 20px)top left,
-      linear-gradient(0deg,#000 1px, yellowgreen 3px)bottom left;
-    background-size: 50% 57%;
+    background: #000;
+    background: linear-gradient(135deg,transparent 15px, #000 0)top left;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
   }
   .two{

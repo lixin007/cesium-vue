@@ -3,7 +3,7 @@
       <div :class="{'a1':true,'font-20':true}">css1</div>
       <div :class="[{'a1':true},css_font20]">css2</div>
       <div :class="[css_a2,css_font20]">css3</div>
-      <div :class="classes">css4</div>
+      <div :class="classes">css3</div>
       <div :class="css_all">css5</div>
       <div :class="[isActive?css_a2:css_a1]">css6</div>
       <div :class="[isActive?{'a1':true}:{'a2':true}]">css6</div>
