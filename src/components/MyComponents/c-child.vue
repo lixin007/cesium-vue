@@ -26,7 +26,7 @@
 </template>
 
 <script>
-    import PubSub from 'pubsub-js'
+
     export default {
       name: "c-child",
       inheritAttrs: false,  //不在html显示没定义的属性

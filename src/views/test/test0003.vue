@@ -21,7 +21,11 @@
         label="地址">
       </el-table-column>
     </el-table>
-
+    <div class="corner"></div>
+    <div class="popupone">00000000005</div>
+ <!--   <div class="one">0050505
+    </div>-->
+<!--    <div class="two">006</div>-->
   </div>
 </template>
 
@@ -63,6 +67,73 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  /*.corner{*/
+  /*  width: 200px;*/
+  /*  height: 50px;*/
+  /*  background:*/
+  /*    linear-gradient(135deg, transparent 15px, deeppink 0)*/
+  /*    top left,*/
+  /*    linear-gradient(0, transparent 0, deeppink 0)*/
+  /*    top right,*/
+  /*    linear-gradient(0, transparent 0, deeppink 0)*/
+  /*    bottom right,*/
+  /*    linear-gradient(0, transparent 0, deeppink 0)*/
+  /*    bottom left;*/
+  /*  background-size: 50% 50%;*/
+  /*  background-repeat: no-repeat;*/
+  /*}*/
+
+  .one{
+    &:before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      background:  rgba(0, 0, 255, 0.3) ;
+      background: linear-gradient(135deg,transparent 15px, rgba(0, 0, 255, 0.3)  0)top left;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+    /*&:after{*/
+    /*  content: "";*/
+    /*  position: absolute;*/
+    /*  top: 2px;*/
+    /*  left: 2px;*/
+    /*  right: 2px;*/
+    /*  bottom: 2px;*/
+    /*  background: linear-gradient(0deg,#003a00 0%, green 100%);*/
+    /*  background: linear-gradient(135deg,transparent 15px,#003a00 5%, green 100%)top left;*/
+    /*  background-size: 100% 100%;*/
+    /*  background-repeat: no-repeat;*/
+    /*}*/
+    position: relative;
+    height: 200px;
+    width: 200px;
+    margin: 10px auto;
+    line-height: 200px;
+    background: green;
+    background: linear-gradient(135deg,transparent 15px, green 0)top left;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #fff;
+  }
+  .two {
+    height: auto;
+    width: auto;
+    margin: 10px auto;
+    line-height: 200px;
+    background: yellowgreen;
+    background:
+      linear-gradient(-45deg,transparent 15px, yellowgreen 0)bottom right;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .popupone {
+    float: inline-end
+  }
 
 </style>

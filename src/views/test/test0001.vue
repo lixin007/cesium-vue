@@ -51,6 +51,7 @@
 <script>
     import { person,try66,box }  from "@/utils/glrandom"
     import alertTwo from "@/components/alert/src/main"
+     import tsg from  "tsg1899"
     import { Button, Select } from 'element-ui'
     export default {
       name: "test0001",
@@ -89,6 +90,9 @@
       },
       components: { alertTwo },
       mounted() {
+        tsg.npmTest("84710")
+        debugger
+        tsg.yz()
         //this.tryrun("666")
         //alert(try66());
         const Person = new person('leon',30)

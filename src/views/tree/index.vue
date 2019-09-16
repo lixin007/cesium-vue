@@ -25,7 +25,7 @@
       6666
     </div>
     <div class="one">12345</div>
-    <div class="two">abcde</div>
+<!--    <div class="two">abcde</div>-->
 
 
   </div>
@@ -100,6 +100,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  /*.app-container {*/
+  /*  background-color: #000;*/
+  /*} */
+
   .a1 {
     font-size: 20px;
     &:before {
@@ -121,12 +125,12 @@ export default {
     &:before {
       content: "";
       position: absolute;
-      top: 2px;
-      left: 2px;
-      right: 2px;
-      bottom: 2px;
+      top: -2px;
+      left: -2px;
+      right: -5px;
+      bottom: -2px;
       background: green;
-      background: linear-gradient(135deg,transparent 15px, green 0)top left;
+      background: linear-gradient(135deg,transparent 15px, #c9ffae 0%,#fff 100%)top left;
       background-size: 100% 100%;
       background-repeat: no-repeat;
     }

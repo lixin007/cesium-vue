@@ -28,6 +28,7 @@
     ></video-player>
     <br/>
     <div>{{count}}</div>
+    <div id="dplayer" style="width: 320px;height: 240px;"></div>
     <li v-for="(item, index) in picdata">
       <img :src="item.src"/>
     </li>
@@ -45,6 +46,7 @@
     data () {
       return {
         playerOptions: {
+          //controls: false,
           //playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
           autoplay: 'auto', //如果true,浏览器准备好时开始回放。
           muted: false, // 默认情况下将会消除任何音频。
@@ -237,6 +239,12 @@
     },
     mounted() {
       this.test2()
+      const dp = new DPlayer({
+        container: document.getElementById('dplayer'),
+        video: {
+          url: 'https://cdn.letv-cdn.com/2018/12/05/JOCeEEUuoteFrjCg/playlist.m3u8'
+        },
+      });
     }
   }
 </script>

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    import PubSub from 'pubsub-js'
+
     export default {
         name: "c-child2",
         data(){
@@ -30,9 +30,12 @@
        },
       mounted(){
         PubSub.subscribe('cg', (msg, val) => { //响应child1
+          console.log(msg)
           this.chuang = val
         })
         PubSub.subscribe('ad', (msg, val) => {
+          console.log('----')
+          console.log(msg)
           this.selectArray = val
 
         })

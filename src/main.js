@@ -6,6 +6,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 import vueToastPanel from "@/components/MyComponents/test/test.js"
+import PubSub from 'pubsub-js'
 import '@/styles/index.scss' // global css
 
 import App from './App'
@@ -52,7 +53,8 @@ require('video.js/dist/video-js.css')
 require('vue-video-player/src/custom-theme.css')
 Vue.use(VideoPlayer)
 
-
+import 'dplayer/dist/DPlayer.min.css';
+import DPlayer from 'dplayer';
 
 new Vue({
   el: '#app',
