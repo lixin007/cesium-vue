@@ -91,7 +91,6 @@
       components: { alertTwo },
       mounted() {
         tsg.npmTest("84710")
-        debugger
         tsg.yz()
         //this.tryrun("666")
         //alert(try66());
