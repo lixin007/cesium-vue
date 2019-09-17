@@ -23,6 +23,7 @@
     "echarts": "^4.2.1",
     "element-ui": "^2.7.2",
     "imports-loader": "^0.8.0",
+    "jed-nui": "^1.0.0",
     "jquery": "^3.3.1",
     "js-cookie": "2.2.0",
     "lx-desgin": "^1.0.1",
