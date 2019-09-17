@@ -1,6 +1,8 @@
 <template>
     <div>
       try6
+<!--      <my-try colorType="a-danger font-big"/>-->
+      <test-toast ref="toast"></test-toast>
     </div>
 </template>
 

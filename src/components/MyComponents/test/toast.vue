@@ -13,12 +13,12 @@
     name: 'test-toast',
     data () {
       return {
-        text: '',
-        toastHidden: false
+        text: '0001',
+        toastHidden: true
       }
     },
     created () {
-       this.toastPlugin()
+       this.toastPlugin('6666',5000)
     },
     components: {
     },
@@ -50,7 +50,7 @@
     z-index: -1;
     opacity: 0;
   }
-  .toast.active {
+  .active {
     width: 150px;
     min-height: 25px;
     opacity: 1;

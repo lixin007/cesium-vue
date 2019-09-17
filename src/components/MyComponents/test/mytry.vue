@@ -30,4 +30,7 @@
   .a-danger {
     color: red;
   }
+  .font-big {
+    font-size: 50px;
+  }
 </style>
