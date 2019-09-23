@@ -28,7 +28,7 @@ module.exports = {
   publicPath: '/',
   outputDir: 'dist',
   assetsDir: 'static',
-  lintOnSave: process.env.NODE_ENV === 'development',
+  lintOnSave: process.env.NODE_ENV === 'development', //保存时是不是用eslint-loader 来lint 代码
   productionSourceMap: false,
   devServer: {
     port: port,
