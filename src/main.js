@@ -53,9 +53,9 @@ require('video.js/dist/video-js.css')
 require('vue-video-player/src/custom-theme.css')
 Vue.use(VideoPlayer)
 
-import jedUI from "jed-nui/src/packages"
+//import jedUI from "jed-nui/src/packages"
 //  import jedUI from "jed-nui"
-//  import jedUI from "tsg1899"
+  import jedUI from "tsg1899"
 // import jedUI from "jed-nui-11"
 Vue.use(jedUI)
 

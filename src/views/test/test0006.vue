@@ -1,9 +1,9 @@
 <template>
     <div>
-      <span v-aa1>{{message}}</span>
+      <span v-my-directive="color3">{{message}}</span>
 <!--      <my-try colorType="a-danger font-big"/>-->
       <test-toast ref="toast"></test-toast>
-      <jed-button type="danger" ref="a1"  @click.native="aa">hansu9</jed-button><br>
+      <jed-button type="danger" ref="a1"  @click.native="aa"></jed-button><br>
       <jed-button type="warning">hansu</jed-button><br>
       <jed-button type="danger" size="large">hansu</jed-button>
       {{color3}} <br/> {{message}}<br/> {{a1}}
@@ -26,7 +26,7 @@
       }
     },
     methods: {
-      aa() {
+      aa() { //合并数组对象
         // this.color3 ="blue"
         // alert(this.color3)
         const a = [{id:1,age:10},{id:2,age:20},{id:3,age:30}]
