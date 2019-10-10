@@ -56,6 +56,7 @@ Vue.use(VideoPlayer)
 //import jedUI from "jed-nui/src/packages"
 //  import jedUI from "jed-nui"
   import jedUI from "tsg1899"
+// import jedUI from "tsg1899/src/packages"
 // import jedUI from "jed-nui-11"
 Vue.use(jedUI)
 

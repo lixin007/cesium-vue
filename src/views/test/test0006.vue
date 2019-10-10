@@ -3,9 +3,9 @@
       <span v-my-directive="color3">{{message}}</span>
 <!--      <my-try colorType="a-danger font-big"/>-->
       <test-toast ref="toast"></test-toast>
-      <jed-button type="danger" ref="a1"  @click.native="aa"></jed-button><br>
-      <jed-button type="warning">hansu</jed-button><br>
-      <jed-button type="danger" size="large">hansu</jed-button>
+      <tsg-button type="danger" ref="a1"  @click.native="aa" value="77"></tsg-button><br>
+      <rsg-button type="warning" :value=message></rsg-button><br>
+      <tsg-button type="danger" size="large" value="a1"></tsg-button>
       {{color3}} <br/> {{message}}<br/> {{a1}}
     </div>
 </template>
@@ -21,7 +21,7 @@
     mixins: [mixin],
     data () {
       return {
-        message:6000000,
+        message:"6000000",
         color3:"red"
       }
     },
