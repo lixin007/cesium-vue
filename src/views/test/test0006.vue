@@ -4,9 +4,30 @@
 <!--      <my-try colorType="a-danger font-big"/>-->
       <test-toast ref="toast"></test-toast>
       <tsg-button type="danger" ref="a1"  @click.native="aa" value="77"></tsg-button><br>
-      <rsg-button type="warning" :value=message></rsg-button><br>
+      <tsg-button type="warning" :value=message></tsg-button><br>
       <tsg-button type="danger" size="large" value="a1"></tsg-button>
-      {{color3}} <br/> {{message}}<br/> {{a1}}
+      <tsg-input
+        placeholder="请输入内容6"
+        suffix-icon="el-icon-date"
+        style="margin: 5px 0;width:300px;"
+        v-model="message">
+      </tsg-input>
+<!--      {{color3}} <br/> {{message}}<br/> {{a1}}-->
+
+      <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
+
+      <tsg-dialog
+        title="提示"
+        :visible.sync="dialogVisible"
+        width="30%">
+        <span>这是一段信息</span>
+        <span slot="footer" class="dialog-footer">
+          <el-button @click="dialogVisible = false">取 消</el-button>
+          <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+        </span>
+      </tsg-dialog>
+
+
     </div>
 </template>
 
@@ -21,7 +42,8 @@
     mixins: [mixin],
     data () {
       return {
-        message:"6000000",
+        message:"6000008",
+        dialogVisible: false,
         color3:"red"
       }
     },
