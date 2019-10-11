@@ -15,12 +15,24 @@
 <!--      {{color3}} <br/> {{message}}<br/> {{a1}}-->
 
       <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
-
+      <el-button type="text" @click="dialogVisible2 = true">点击打开 Dialog2</el-button>
       <tsg-dialog
-        title="提示"
-        :visible.sync="dialogVisible"
+      title="提示1"
+      :visible.sync="dialogVisible"
+      :drag = true
+      width="30%">
+      <span>这是一段信息1</span>
+      <span slot="footer" class="dialog-footer">
+          <el-button @click="dialogVisible = false">取 消</el-button>
+          <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+        </span>
+    </tsg-dialog>
+      <tsg-dialog
+        title="提示2"
+        :visible.sync="dialogVisible2"
+        :drag = true
         width="30%">
-        <span>这是一段信息</span>
+        <span>这是一段信息2</span>
         <span slot="footer" class="dialog-footer">
           <el-button @click="dialogVisible = false">取 消</el-button>
           <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
@@ -44,6 +56,7 @@
       return {
         message:"6000008",
         dialogVisible: false,
+        dialogVisible2: false,
         color3:"red"
       }
     },
