@@ -1,5 +1,6 @@
 <template>
     <div>
+      <div id="myViewElement"></div>
       <span v-my-directive="color3">{{message}}</span>
 <!--      <my-try colorType="a-danger font-big"/>-->
       <test-toast ref="toast"></test-toast>
@@ -20,6 +21,7 @@
       title="提示1"
       :visible.sync="dialogVisible"
       :drag = true
+      @click="showRemove($event)"
       width="30%">
       <span>这是一段信息1</span>
       <span slot="footer" class="dialog-footer">
@@ -38,8 +40,6 @@
           <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
         </span>
       </tsg-dialog>
-
-
     </div>
 </template>
 
@@ -54,16 +54,18 @@
     mixins: [mixin],
     data () {
       return {
-        message:"6000008",
+        message:"60000333318",
         dialogVisible: false,
         dialogVisible2: false,
         color3:"red"
       }
     },
     methods: {
-      aa() { //合并数组对象
+      aa(e) { //合并数组对象
         // this.color3 ="blue"
         // alert(this.color3)
+        console.log(e.target)
+        console.log(e.currentTarget)
         const a = [{id:1,age:10},{id:2,age:20},{id:3,age:30}]
         const b = [{id:3,sex:'男'},{id:1,sex:'男'},{id:2,sex:'女'}]
         let c = [];
@@ -75,7 +77,15 @@
       },
       aa2(){
         alert("update")
-      }
+      },
+      showRemove(event) {
+        // let target = event.target
+        console.log("--start--")
+        console.log(event.target)
+        console.log(event.currentTarget)
+        console.log("--end--")
+        // console.log(this.$el)
+      },
     },
     /*updated(){
       debugger
