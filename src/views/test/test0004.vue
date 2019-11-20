@@ -120,22 +120,13 @@
         picdata2:'',
         picdata: [{
           id:1,
-          src: '404_images/404.png'
+          src: '全球/1.jpg'
         },{
           id:2,
-          src: '404_images/404_cloud.png'
+          src: '全球/2.jpg'
         },{
           id:3,
-          src: '404_images/404.png'
-        },{
-          id:4,
-          src: '404_images/404_cloud.png'
-        },{
-          id:5,
-          src: '404_images/404.png'
-        },{
-          id:6,
-          src: '404_images/404_cloud.png'
+          src: '全球/3.jpg'
         }],
         columns: [{
           hasSort: false, //<Boolean> 是否排序
@@ -182,7 +173,8 @@
           return item*item
         })
         this.picdata.forEach((item,index,arr)=>{
-          item.src = require("@/assets/"+ item.src)
+          // item.src = "全球/原的有.jpg"
+          // item.src = require("@/assets/"+ item.src)
           // return {
           //   id: item.id,
           //   src: require("@/assets/"+ item.src)
