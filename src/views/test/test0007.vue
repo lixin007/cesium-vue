@@ -1,8 +1,8 @@
 <template>
     <div class="a-one">
-      <div class="a-two">007</div>
-      <tsg-button type="danger" size="large" value="a1"></tsg-button>
-      <tsg-hello :msg="msg"/>
+      <tsg-button type="warning" size="large" value="a80"></tsg-button>
+      <tsg-hello  msg="Welcome to zkxt-ui Demo666" />
+      <tsg-el-button plain  type="success">信息按钮</tsg-el-button>
     </div>
 </template>
 
@@ -20,8 +20,6 @@
 <style lang="scss" scoped>
   .a-one {
     font-size: 16px;
-    width: 50vw;
-    height: 10vh;
     color: red;
     overflow: hidden;
     .a-two {
