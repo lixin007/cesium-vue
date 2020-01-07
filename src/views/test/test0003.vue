@@ -1,7 +1,7 @@
 <template>
   <div>
     <c-father></c-father>
-    <test-panel ref="panel"></test-panel>
+    <test-panel ref="panel" id="settingRow"></test-panel>
     <test-toast ref="toast"></test-toast>
     <el-table
       :data="tableData"
@@ -37,7 +37,6 @@
     data(){
       return{
         testArr:[1,2,5],
-
        tableData: [{
          date: '2016-05-02',
          name: {
@@ -56,6 +55,13 @@
       })
     },
     mounted() {
+      this.$loading({
+        lock: true,
+        text: 'Loading',
+        spinner: 'el-icon-loading',
+        target: document.querySelector("#settingRow"),
+        background: 'rgba(0, 0, 0, 0.7)'
+      })
       const p = new Point(1,2);
       p.y = 3
       p.showValue()

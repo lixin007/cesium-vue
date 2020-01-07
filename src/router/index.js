@@ -138,7 +138,7 @@ export const constantRoutes = [
         component: ()=> import('@/views/test/test0007'),
         name: 'Test7',
         meta: { title: 'Test0007', icon: 'dashboard' }
-      }
+      },
     ]
   },
 

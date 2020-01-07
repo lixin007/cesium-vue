@@ -32,11 +32,12 @@
     "nprogress": "0.2.0",
     "path-to-regexp": "2.4.0",
     "pubsub-js": "^1.7.0",
-    "tsg1899": "^1.0.46",
+    "tsg1899": "^1.0.47",
     "vue": "2.6.10",
     "vue-echarts": "^4.0.3",
     "vue-router": "3.0.6",
     "vue-video-player": "^5.0.2",
+    "vuedraggable": "2.20.0",
     "vuex": "3.1.0"
   },
   "devDependencies": {

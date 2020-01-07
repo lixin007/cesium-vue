@@ -1,7 +1,6 @@
 <template>
   <div>
-
-    <c-child :name.sync="name" :level="level" :title="title" :msg="msg"  @childevent='wathChildEvent'></c-child>
+    <c-child :name.sync="name" :level="level" :title="title" :msg="msg"  @childevent='wathChildEvent' tsg="1899"></c-child>
     <c-child2/>
     <button @click="change" style="margin-top: 20px;">改变</button>
   </div>

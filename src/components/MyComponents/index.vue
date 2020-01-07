@@ -3,7 +3,7 @@
     <h5 class={styles.title}>{{name}}</h5>
     <slot name="header"><h1>默认header</h1></slot>
     <!--<div class="num">{{ count }}</div>-->
-    <el-input v-model="count" placeholder="" class="input-margin" v-focus></el-input>
+    <el-input v-model="count" placeholder="" class="input-margin" v-focus="count"></el-input>
     <el-button  @click="increment">自增</el-button>
   </div>
 </template>
@@ -18,21 +18,28 @@
     },
     directives: {
       focus: {
-        // 指令的定义
-        inserted: function (el,binding,vnode) {
-          el.style.border="1px solid red";  //操作style所有样式
-          // console.log(el);
-          // console.log(el.value);
-          // console.log(el.dataset.name);
-          // console.log("666");
-          console.log(vnode.context.$route);
-           el.querySelector('input').focus()
+        update: function (el,binding,vnode) {
+
+          // el.style.border="1px solid red";  //操作style所有样式
+          // el.input.style.color="1px solid red";  //操作style所有样式
+          console.log(binding.value);
+          const value = binding.value
+          if (value =="good") {
+            el.style.border="1px solid green";
+            el.querySelector('input').style.color='green'
+          }  else {
+            el.style.border="1px solid red";
+            el.querySelector('input').style.color='red'
+          }
+          console.log(el);
+          console.log(vnode);
+          el.querySelector('input').focus()
         }
       }
     },
     data() {
       return {
-        count: 0
+        count: 90
       };
     },
     methods: {

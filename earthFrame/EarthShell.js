@@ -103,7 +103,7 @@ export default class EarthShell {
         roll: Cesium.Math.toRadians(0)
       }
     })
-
+    globalThis.viewer = _viewer
     // 添加水效果
     // _viewer.terrainProvider = Cesium.createWorldTerrain({
     //   requestWaterMask : false

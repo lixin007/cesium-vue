@@ -19,14 +19,10 @@
     <div>这是个h1标题:{{title}}</div>
     <br>
     <div>{{msg}}</div>
-
-
-
   </div>
 </template>
 
 <script>
-
     export default {
       name: "c-child",
       inheritAttrs: false,  //不在html显示没定义的属性

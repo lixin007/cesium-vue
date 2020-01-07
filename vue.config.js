@@ -63,6 +63,7 @@ module.exports = {
     resolve: {
       alias: {
         '@': resolve('src'),
+        'elementUi': resolve('node_modules/element-ui/'),
         'public':resolve('public'),
         'earthFrame':path.resolve(__dirname, 'earthFrame'),
         'cesium': path.resolve(__dirname, cesiumSource) // 3
