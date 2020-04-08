@@ -19,6 +19,7 @@ export default MyPlugin
 export const mixin = {
   methods: {
     formatDate (dateTime) {
+      debugger
       // return dateTime+"成功"
       alert(dateTime+"成功")
     }

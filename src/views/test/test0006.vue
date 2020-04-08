@@ -15,7 +15,7 @@
       </tsg-input>
 <!--      {{color3}} <br/> {{message}}<br/> {{a1}}-->
 
-      <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
+      <el-button type="text" @click="aa1">点击打开 Dialog</el-button>
       <el-button type="text" @click="dialogVisible2 = true">点击打开 Dialog2</el-button>
       <tsg-dialog
       title="提示1"
@@ -73,7 +73,11 @@
           const temp = b.filter(i => i.id === u.id)[0];
           c.push({...u, ...temp});
         }
+        debugger
         console.log(c)
+      },
+      aa1(){
+        this.formatDate("56")
       },
       aa2(){
         alert("update")
@@ -94,9 +98,9 @@
 
     mounted() {
       this.$myMethod();
-
+      this.aa()
       Vue.myGlobalMethod();
-      // this.formatDate("56")
+      this.formatDate("56")
       console.log(this.$refs)
       // tsg.npmTest("84710")
       // tsg.yz()

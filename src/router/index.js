@@ -54,7 +54,7 @@ export const constantRoutes = [
     children: [
       {
         path: 'cesium',
-        component: () => import('@/views/cesium/index'),
+        component: () => import('@/views/cesium/measure'),
         name: 'Cesium',
         meta: { title: 'Cesium主页', icon: 'dashboard', affix: true }
       }
@@ -76,7 +76,25 @@ export const constantRoutes = [
         path: 'measure',
         name: 'measure',
         component: () => import('@/views/cesium/measure'),
-        meta: { title: '测量工具', icon: 'dashboard',keepAlive: true }
+        meta: { title: '线', icon: 'dashboard',keepAlive: true }
+      },
+      {
+        path: 'polygon',
+        name: 'polygon',
+        component: () => import('@/views/cesium/polygon'),
+        meta: { title: '多边形测试1', icon: 'dashboard',keepAlive: true }
+      },
+      {
+        path: 'polygon2',
+        name: 'polygon2',
+        component: () => import('@/views/cesium/polygon2'),
+        meta: { title: '多边形测试2', icon: 'dashboard',keepAlive: true }
+      },
+      {
+        path: 'polygon3',
+        name: 'polygon3',
+        component: () => import('@/views/cesium/polygon3'),
+        meta: { title: '多边形测试2', icon: 'dashboard',keepAlive: true }
       },
       {
         path: 'draw',
