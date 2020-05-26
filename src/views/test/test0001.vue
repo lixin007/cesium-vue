@@ -146,6 +146,10 @@
           }
         }
       },
+      created() {
+        debugger
+        console.log(process.env)
+      },
       methods: {
         outerNumChange() {
           outer_obj1.no += 10;

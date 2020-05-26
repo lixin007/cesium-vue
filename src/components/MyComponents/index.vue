@@ -4,6 +4,9 @@
     <slot name="header"><h1>默认header</h1></slot>
     <!--<div class="num">{{ count }}</div>-->
     <el-input v-model="count" placeholder="" class="input-margin" v-focus="count"></el-input>
+    <el-input v-model="count2" placeholder="" class="input-margin"></el-input>
+    <el-input v-model="count3" placeholder="" class="input-margin"></el-input>
+    <el-input v-model="count4" placeholder="" class="input-margin"></el-input>
     <el-button  @click="increment">自增</el-button>
   </div>
 </template>
@@ -39,12 +42,16 @@
     },
     data() {
       return {
-        count: 90
+        count: 90,
+        count2: 290,
+        count3: 390,
+        count4: 490,
       };
     },
     methods: {
       increment() {
         this.count++;
+        // this.$router.push({path:'/polygon'})
       }
     }
   };

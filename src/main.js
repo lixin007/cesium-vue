@@ -8,14 +8,14 @@ import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 import vueToastPanel from "@/components/MyComponents/test/test.js"
 import PubSub from 'pubsub-js'
 import '@/styles/index.scss' // global css
-
+import _ from 'lodash'
 import App from './App'
 import store from './store'
 import router from './router'
 
 import '@/icons' // icon
 import '@/components/alert/'
-import '@/permission' // permission control
+import '@/permission' // permission control 权限引入
 import '@/assets/icon/iconfont.css' //第三方图标
 
 import ECharts from 'vue-echarts/components/ECharts'
@@ -62,6 +62,7 @@ Vue.use(jedUI)
 
 import MyPlugin from '@/utils/mixin'
 Vue.use(MyPlugin)
+
 
 import 'dplayer/dist/DPlayer.min.css';
 import DPlayer from 'dplayer';

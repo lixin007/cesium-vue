@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const defaultSettings = require('./src/settings.js')
 const cesiumSource = './node_modules/cesium/Source'
 const cesiumWorkers = '../Build/Cesium/Workers'
+const zkxtUI = './zkxt-ui/zkxt-lib/src/components'
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
@@ -66,6 +67,7 @@ module.exports = {
         'elementUi': resolve('node_modules/element-ui/'),
         'public':resolve('public'),
         'earthFrame':path.resolve(__dirname, 'earthFrame'),
+        'zkxt-ui': resolve(zkxtUI),
         'cesium': path.resolve(__dirname, cesiumSource) // 3
       }
     },

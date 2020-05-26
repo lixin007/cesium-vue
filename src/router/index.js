@@ -49,8 +49,8 @@ export const constantRoutes = [
 
   {
     path: '/',
-    component: Layout,
-    redirect: '/cesium',
+    component: Layout, //主页依
+    redirect: '/cesium', //跳转
     children: [
       {
         path: 'cesium',
@@ -106,8 +106,9 @@ export const constantRoutes = [
   },
 
   {
-    path: '/excel',
+    path: '/test',
     component: Layout,
+    // hidden: true,
     redirect: '/excel/export-excel',
     name: 'test',
     alwaysShow: true,
@@ -156,6 +157,44 @@ export const constantRoutes = [
         component: ()=> import('@/views/test/test0007'),
         name: 'Test7',
         meta: { title: 'Test0007', icon: 'dashboard' }
+      },
+      {
+        path: 'test8',
+        component: ()=> import('@/views/test/test0008'),
+        name: 'Test8',
+        meta: { title: 'Test0008', icon: 'dashboard' },
+        children: [
+          {
+            path: 'test81',
+            component: ()=> import('@/views/test/test0005'),
+            name: 'Test81',
+            meta: { title: 'Test81', icon: 'dashboard' }
+          },
+          {
+            path: 'test82',
+            component: ()=> import('@/views/test/test0006'),
+            name: 'Test82',
+            meta: { title: 'Test82', icon: 'dashboard' }
+          },
+          {
+            path: 'test83',
+            component: ()=> import('@/views/test/test0007'),
+            name: 'Test83',
+            meta: { title: 'Test83', icon: 'dashboard' }
+          }
+        ]
+      },
+      {
+        path: 'test9',
+        component: ()=> import('@/views/test/test0009'),
+        name: 'Test9',
+        meta: { title: 'Test0009', icon: 'dashboard' }
+      },
+      {
+        path: 'test10',
+        component: ()=> import('@/views/test/test0010'),
+        name: 'Test10',
+        meta: { title: 'Test0010', icon: 'dashboard' }
       },
     ]
   },
@@ -269,14 +308,17 @@ export const constantRoutes = [
       }
     ]
   },
-
+  { path: '/baidu',   //外链接
+    beforeEnter() {location.href = 'https://www.baidu.com/'}
+    },
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
+  { path: '*', redirect: '/404', hidden: true },
+
 ]
 
 const createRouter = () => new Router({
   // mode: 'history', // require service support
-  scrollBehavior: () => ({ y: 0 }),
+  scrollBehavior: () => ({ y: 0 }),// 顶部 (保持原先的滚动位置，注意: 这个功能只在 HTML5 history 模式下可用。)
   routes: constantRoutes
 })
 

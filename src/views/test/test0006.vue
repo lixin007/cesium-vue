@@ -1,5 +1,6 @@
 <template>
     <div>
+      <span>{{ $route.params.id }}</span>
       <div id="myViewElement"></div>
       <span v-my-directive="color3">{{message}}</span>
 <!--      <my-try colorType="a-danger font-big"/>-->
@@ -97,11 +98,17 @@
     },*/
 
     mounted() {
+      debugger
+      console.log(this.$route.query.type)
+      console.log(this.$route.path)
+
       this.$myMethod();
       this.aa()
       Vue.myGlobalMethod();
       this.formatDate("56")
-      console.log(this.$refs)
+
+
+
       // tsg.npmTest("84710")
       // tsg.yz()
       // const { yz2,yz4 } = tsg

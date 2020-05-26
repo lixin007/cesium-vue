@@ -25,6 +25,7 @@
         </div>
       </transition-group>
     </vuedraggable>
+    <vue-toast-panel />
   </div>
 </template>
 
@@ -91,6 +92,8 @@
         console.log(this.list)
       },
       mounted () {
+        this.$myMethod()
+
         /*const a1 = fileNames('../../icons/svg','svg')
         console.log(a1)*/
         const req = require.context('../../icons/svg', false, /\.svg$/)

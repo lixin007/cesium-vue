@@ -10,7 +10,7 @@ const state = {
 
 const mutations = {
   CHANGE_SETTING: (state, { key, value }) => {
-    if (state.hasOwnProperty(key)) {
+    if (state.hasOwnProperty(key)) { //state是否有此属性
       state[key] = value
     }
   }

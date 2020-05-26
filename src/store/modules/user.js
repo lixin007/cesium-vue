@@ -30,10 +30,12 @@ const actions = {
   trymethod({ commit }, value) { //测试action
     commit('SET_TRY', value)
   },
-  login({ commit }, userInfo) {
+  login({ commit }, userInfo) { //action的login
+    debugger
+    console.log(process.env)
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
-      login({ username: username.trim(), password: password }).then(response => {
+      login({ username: username.trim(), password: password }).then(response => { //api里的login
         const { data } = response
         commit('SET_TOKEN', data.token)
         setToken(data.token)
