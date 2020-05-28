@@ -67,6 +67,16 @@ Vue.use(MyPlugin)
 import 'dplayer/dist/DPlayer.min.css';
 import DPlayer from 'dplayer';
 
+
+//KUI按需加载
+// import  { ModuleTree }  from 'KUI'
+// Vue.use(KUI)
+
+
+//KUI全部加载
+import  KUI  from 'KUI'
+Vue.use(KUI)
+
 new Vue({
   el: '#app',
   router,

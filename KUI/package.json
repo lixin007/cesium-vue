@@ -1,0 +1,38 @@
+{
+  "name": "KUI",
+  "version": "1.2.1",
+  "private": true,
+  "main": "./index.js",
+  "scripts": {
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.3.2",
+    "file-saver": "^2.0.2",
+    "global": "^4.4.0",
+    "guid-string": "^1.0.0",
+    "hammerjs": "^2.0.8",
+    "html-docx-js-typescript": "^0.1.2",
+    "idcard-util": "^1.0.2",
+    "jquery": "^3.4.1",
+    "jquery-ui": "^1.12.1",
+    "js-base64": "^2.5.1",
+    "js-cookie": "2.2.0",
+    "lodash": "^4.17.15",
+    "mammoth": "^1.4.9",
+    "markdown-it": "^10.0.0",
+    "markdown-it-sanitizer": "^0.4.3",
+    "pinyin-match": "^1.0.9",
+    "pl-table": "^2.5.8",
+    "pubsub-js": "^1.8.0",
+    "resize-detector": "^0.2.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0"
+  }
+}
