@@ -19,6 +19,7 @@
 </template>
 
 <script>
+  import moment from 'moment'
   import NProgress from 'nprogress' // progress bar
   import 'nprogress/nprogress.css' // progress bar style
   import SIdentify from '@/components/identify'
@@ -114,6 +115,12 @@
         // 验证码初始化
         this.identifyCode = ''
         this.makeCode(this.identifyCodes, 4)
+
+        //时间转换
+        let a1 ="2020-05-25T16:05:16,444+08:00"
+        let a2 =moment(a1).format("YYYY-MM-DD")
+        console.log(a2)
+
       },
       directives: {
         btype:{

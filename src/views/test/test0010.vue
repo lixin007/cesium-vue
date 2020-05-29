@@ -1,18 +1,22 @@
 <template>
     <div>
-      <div style="margin: 10px">
+      <div style="margin: 10px;width: fit-content;" >
         <module-tree
           :data="data"
           :props="props"
           @node-delete="nodeDelete"
           @node-get="nodeGet"
+          style="margin: 0 20px;"
         />
+        <div style="margin: 10px 0">
+          <el-button size="mini" @click="nodeSave" style="float: right;">保存</el-button>
+        </div>
       </div>
-
     </div>
 </template>
 
 <script>
+    import { findTreeNode } from '@/utils/tsg'
     import  { ModuleTree }  from 'KUI'
     export default {
       name: "test0010",
@@ -70,8 +74,15 @@
           }
         },
       methods:{
+        nodeSave(){
+          console.log(this.data)
+        },
         nodeDelete(node){
-          alert(node.label +"已删除")
+          let treeNode = findTreeNode(this.data,9)
+          if (treeNode) {
+            _.pull(this.data,treeNode)
+          }
+          console.log(this.data)
         },
         nodeGet(node){
 
