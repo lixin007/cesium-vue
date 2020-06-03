@@ -88,13 +88,13 @@ export const constantRoutes = [
         path: 'polygon2',
         name: 'polygon2',
         component: () => import('@/views/cesium/polygon2'),
-        meta: { title: '多边形测试2', icon: 'dashboard',keepAlive: true }
+        meta: { title: '多边形测试2', icon: 'dashboard' }
       },
       {
         path: 'polygon3',
         name: 'polygon3',
         component: () => import('@/views/cesium/polygon3'),
-        meta: { title: '多边形测试2', icon: 'dashboard',keepAlive: true }
+        meta: { title: '多边形测试3', icon: 'dashboard',keepAlive: true }
       },
       {
         path: 'draw',
@@ -194,7 +194,7 @@ export const constantRoutes = [
         path: 'test10',
         component: ()=> import('@/views/test/test0010'),
         name: 'Test10',
-        meta: { title: 'Test0010', icon: 'dashboard' }
+        meta: { title: 'Test0010', icon: 'dashboard',keepAlive: true}
       },
     ]
   },

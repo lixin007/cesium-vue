@@ -88,6 +88,11 @@
 
         }
       },
+      beforeRouteLeave(to, from, next) {
+        debugger
+        console.log(from.meta.keepAlive)
+        next();
+      }
     }
 </script>
 

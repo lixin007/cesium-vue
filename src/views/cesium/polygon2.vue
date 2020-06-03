@@ -1,7 +1,5 @@
 <template>
   <div class="main">
-    <div id="cesiumContainer">
-    </div>
     <div class="toolbar">
       <el-button-group>
         <el-button type="primary" icon="el-icon-top" size="mini" plain title="最上" @click="lowerToBottom"></el-button>
@@ -9,6 +7,8 @@
         <el-button type="primary" icon="el-icon-bottom-right" size="mini" plain  title="向下" @click="raise"></el-button>
         <el-button type="primary" icon="el-icon-bottom" size="mini" plain title="最底"  @click="raiseToTop"></el-button>
       </el-button-group>
+    </div>
+    <div id="cesiumContainer">
     </div>
   </div>
 </template>
@@ -227,9 +227,9 @@
 <style lang="scss" scoped>
   .toolbar {
     position: absolute;
-    top: 10px;
+    top: 65px;
     left: 10px;
-    /*width: 75px;*/
+    z-index: 999;
 
     .el-button-group {
       .el-button {
@@ -238,10 +238,6 @@
       }
     }
 
-    /*.el-button--primary.is-plain {
-      color: #22abff;
-      background: #1f2d3d;
-    }*/
   }
 
 </style>

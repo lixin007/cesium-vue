@@ -283,8 +283,9 @@
 <style lang="scss" scoped>
   .toolbar {
     position: absolute;
-    top: 10px;
+    top: 65px;
     left: 10px;
+    z-index: 999;
     /*width: 75px;*/
 
     .el-button-group {

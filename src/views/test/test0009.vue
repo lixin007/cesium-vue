@@ -125,7 +125,6 @@
       directives: {
         btype:{
           update: function (el,binding,vnode) {
-            debugger
             console.log(el)
           }
         }
