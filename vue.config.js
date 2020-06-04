@@ -68,6 +68,7 @@ module.exports = {
         'public':resolve('public'),
         'earthFrame':path.resolve(__dirname, 'earthFrame'),
         'KUI': path.resolve('./KUI'),
+        'TVB':path.resolve('./src/components/MyComponents/tvb'),
         'cesium': path.resolve(__dirname, cesiumSource) // 3
       }
     },

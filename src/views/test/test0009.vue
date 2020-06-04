@@ -13,18 +13,26 @@
     <div @click="refreshCode">
       <s-identify :identifyCode="identifyCode"></s-identify>
     </div>
-
+    <cctv-tvb />
+    <tvb-a />
     <el-progress :percentage="percentage" :color="customColor" text-inside="true" :stroke-width="20" width="100" style="margin: 10px 100px" v-if="progressELState"></el-progress>
   </div>
 </template>
 
 <script>
+
   import moment from 'moment'
   import NProgress from 'nprogress' // progress bar
   import 'nprogress/nprogress.css' // progress bar style
   import SIdentify from '@/components/identify'
   import router from '@/router'
   import MyComponents from "@/components/MyComponents/index.vue"
+
+  // 按需加载
+  import Vue from 'vue'
+  import  { tvbA }  from 'TVB'
+  Vue.use(tvbA) //写法1
+  // Vue.component(tvbA.name,tvbA) //写法2
     export default {
       name: "test0009",
       data(){

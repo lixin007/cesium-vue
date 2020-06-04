@@ -63,9 +63,8 @@ Vue.use(jedUI)
 import MyPlugin from '@/utils/mixin'
 Vue.use(MyPlugin)
 
-
-import 'dplayer/dist/DPlayer.min.css';
-import DPlayer from 'dplayer';
+import cFather from "@/components/MyComponents"
+Vue.use(cFather)
 
 
 //KUI按需加载
@@ -76,6 +75,11 @@ import DPlayer from 'dplayer';
 //KUI全部加载
 import  KUI  from 'KUI'
 Vue.use(KUI)
+
+
+// import  TVB  from 'TVB'
+// Vue.use(TVB)
+
 
 new Vue({
   el: '#app',
