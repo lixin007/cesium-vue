@@ -18,7 +18,7 @@
   import earthShell from 'earthFrame/EarthShell'
   let viewer
   export default {
-    name: "polygon2",
+    name: "polygon3",
     data() {
       return {
         earth: null,

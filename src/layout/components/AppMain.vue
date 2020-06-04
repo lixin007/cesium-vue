@@ -1,11 +1,13 @@
 <template>
   <section class="app-main">
     <transition name="fade-transform" mode="out-in">
-      <keep-alive v-if="$route.meta.keepAlive" :key="key">
+      <!--<keep-alive v-if="$route.meta.keepAlive" :key="key">
         <router-view></router-view>
       </keep-alive>
-      <router-view :key="key" v-else />
-     <!-- <router-view :key="key" />-->
+      <router-view :key="key" v-else />-->
+      <keep-alive include="polygon3,test0002" >
+        <router-view/>
+      </keep-alive>
     </transition>
   </section>
 </template>
