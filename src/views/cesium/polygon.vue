@@ -3,10 +3,10 @@
     <div id="cesiumContainer">
     </div>
     <div class="toolbar">
-      <el-button-group>
-        <el-button type="primary" icon="el-icon-ump-huizhi" size="mini" plain  title="长度测量" @click="a1"></el-button>
-        <el-button type="primary" icon="el-icon-ump-draw-polygon" size="mini" plain title="面积测算" @click="a2"></el-button>
-        <el-button type="primary" icon="el-icon-delete" size="mini" plain title="清理结果" @click="createMeasureEvent('cleanUp')"></el-button>
+      <el-button-group style="position: absolute; top: 65px;">
+        <el-button type="primary" icon="el-icon-ump-huizhi" size="mini" plain  title="zindex设定" @click="a1"></el-button>
+        <el-button type="primary" icon="el-icon-ump-draw-polygon" size="mini" plain title="删除" @click="a2"></el-button>
+        <el-button type="primary" icon="el-icon-delete" size="mini" plain title="label" @click="setLabel"></el-button>
       </el-button-group>
     </div>
   </div>
@@ -95,8 +95,8 @@
         this.MeasureHelper.createMeasureEvent(type);
       },
       createCzm: function (viewer) {
-        const wyoming =viewer.entities.add({
-          id : 'w1',
+        const polygon1 = {
+          id : 'polygon1',
           name : 'Wyoming1',
           polygon : {
             hierarchy : Cesium.Cartesian3.fromDegreesArray([
@@ -112,59 +112,64 @@
               -111.047063,42.000709,
               -111.047063,44.476286,
               -111.05254,45.002073]),
-            material : Cesium.Color.RED.withAlpha(1),
-            outline : true,
-            zIndex: 2,
-            outlineColor : Cesium.Color.BLACK
-          }
-        });
-
-        const wyoming2 =viewer.entities.add({
-          id : 'w2',
-          name : 'Wyoming2',
-          polygon : {
-            hierarchy : Cesium.Cartesian3.fromDegreesArray([
-              -109.080842,45.002073,
-              -105.91517,45.002073,
-              -104.058488,44.996596,
-              -104.053011,43.002989,
-              -104.053011,41.003906,
-              -105.728954,40.998429,
-              -107.919731,41.003906,
-              -109.04798,40.998429,
-              -111.047063,40.998429,
-              -111.047063,42.000709,
-              -111.047063,44.476286,
-              -111.05254,45.002073]),
-            material : Cesium.Color.BLUE.withAlpha(1),
+            material : Cesium.Color.CADETBLUE.withAlpha(1),
             outline : true,
             zIndex: 1,
             outlineColor : Cesium.Color.BLACK
           }
-        });
-        viewer.zoomTo(wyoming);
-
-      },
-      a1(){
-        let  w1 = viewer.entities.getById('w1').polygon
-        let  w2 = viewer.entities.getById('w2').polygon
-        console.log(w1)
-        if (w1.zIndex > w2.zIndex) {
-          w2.zIndex  = w1.zIndex +1
-        } else
-        {
-          w1.zIndex  = w2.zIndex +1
         }
-      },
-      a2(){
-        debugger
-        for (let i = 0; i < viewer.dataSources._dataSources.length; i++) {
-          let entities = viewer.dataSources._dataSources[i].entities.values
-          for (let i2 = 0; i2 < entities.length; i2++) {
-            const entity = entities[i2]
-            console.log(entity.polyline.zIndex)
+        const polygon2 = {
+          id : 'polygon2',
+          name : 'Wyoming2',
+          polygon : {
+            hierarchy : Cesium.Cartesian3.fromDegreesArray([
+              -106.080842,45.002073,
+              -106.91517,45.002073,
+              -107.047063,44.476286]),
+            material : Cesium.Color.BROWN.withAlpha(1),
+            outline : true,
+            zIndex: 2,
+            outlineColor : Cesium.Color.BLACK
           }
         }
+        viewer.entities.add(polygon1)
+        viewer.entities.add(polygon2)
+        let  polygon = viewer.entities.getById('polygon1')
+        const isExistPolygon = viewer.entities.contains(polygon) //
+        console.log(isExistPolygon)
+        viewer.zoomTo(polygon)
+      },
+      a1(){
+        let polygon1 = viewer.entities.getById('polygon1').polygon
+        let polygon2 = viewer.entities.getById('polygon2').polygon
+        let p1 = polygon1.zIndex.getValue() //正确获值
+        let p2 = polygon2.zIndex.getValue()
+        p1= (p1 > p2)? p2 - 1 : p2 + 1
+        polygon1.zIndex.setValue(p1) //正确设值
+        console.log(p1)
+      },
+      a2(){
+        let  polygonDel = viewer.entities.getById('polygon1')
+        // viewer.entities.remove(polygonDel)
+        polygonDel.show  = !polygonDel.show
+      },
+      setLabel(){
+        const label1 = {
+          id : 'label1',
+          name : 'label1',
+          position : Cesium.Cartesian3.fromDegrees( -105.728954,39.998429 ),
+          label : { //文字标签
+            text : '风云层',
+            font : '20pt monospace',
+            style : Cesium.LabelStyle.FILL,
+            backgroundColor: Cesium.Color.BLACK.withAlpha(1),
+            outlineWidth : 2,
+            verticalOrigin : Cesium.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置
+            pixelOffset : new Cesium.Cartesian2( 0, -9 )   //偏移量
+          }
+        }
+        const labelEntity = viewer.entities.add(label1)
+        viewer.zoomTo(labelEntity)
       }
     }
   }
