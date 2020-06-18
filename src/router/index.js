@@ -213,16 +213,22 @@ export const constantRoutes = [
         meta: { title: 'Table', icon: 'table',noCache: false  }
       },
       {
+        path: 'table2',
+        name: 'Table2',
+        component: () => import('@/views/table/table2'),
+        meta: { title: 'Table2', icon: 'table',noCache: false  }
+      },
+      {
+        path: 'canvas',
+        name: 'Canvas',
+        component: () => import('@/views/table/canvas'),
+        meta: { title: 'canvas', icon: 'table',noCache: false  }
+      },
+      {
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
         meta: { title: 'Tree', icon: 'tree' }
-      },
-      {
-        path: 'test0001',
-        name: 'Test0001',
-        component: () => import('@/views/test/test0001'),
-        meta: { title: 'Test0001', icon: 'tree' }
       }
     ]
   },

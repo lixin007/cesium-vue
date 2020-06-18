@@ -26,7 +26,7 @@
     },
     mounted() {
       this.$nextTick(() => {
-        this.cesiumInit()
+        viewer = this.cesiumInit()
         this.createCzm(viewer)
       })
     },
@@ -62,7 +62,7 @@
           homeButton: true,
           sceneModePicker: true,
           fullscreenButton: false,
-          vrButton: false,
+          vrButton: true,
           baseLayerPicker: false,
           shouldAnimate : true,
           // terrainProvider: Cesium.createWorldTerrain(),//terrainProvider,
@@ -87,12 +87,13 @@
             roll: Cesium.Math.toRadians(0)
           }
         })
+
+        let imageryLayers = viewer.scene.imageryLayers
+        imageryLayers.addImageryProvider(new Cesium.SingleTileImageryProvider({
+          url : './icon/result.png',
+          rectangle : Cesium.Rectangle.fromDegrees(113.6833, 29.99667, 115.0833, 31.51667)
+        }))
         return viewer
-      },
-      createMeasureEvent: function (type) {
-        if (this.MeasureHelper == null)
-          this.MeasureHelper = this.earth.MeasureHelper();
-        this.MeasureHelper.createMeasureEvent(type);
       },
       createCzm: function (viewer) {
         const polygon1 = {
@@ -137,7 +138,7 @@
         let  polygon = viewer.entities.getById('polygon1')
         const isExistPolygon = viewer.entities.contains(polygon) //
         console.log(isExistPolygon)
-        viewer.zoomTo(polygon)
+        // viewer.zoomTo(polygon)
       },
       a1(){
         let polygon1 = viewer.entities.getById('polygon1').polygon
@@ -153,7 +154,7 @@
         // viewer.entities.remove(polygonDel)
         polygonDel.show  = !polygonDel.show
       },
-      setLabel(){
+      setLabel(viewer){
         const label1 = {
           id : 'label1',
           name : 'label1',

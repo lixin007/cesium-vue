@@ -1,5 +1,6 @@
 <template>
     <div>
+
       <div style="margin: 10px;width: fit-content;" >
         <module-tree
           :data="data"
@@ -11,7 +12,9 @@
         <div style="margin: 10px 0">
           <el-button size="mini" @click="nodeSave" style="float: right;">保存</el-button>
         </div>
+        <kui-button text="0001" size="small" />
       </div>
+
     </div>
 </template>
 
