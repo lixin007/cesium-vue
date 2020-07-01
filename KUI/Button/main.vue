@@ -1,6 +1,10 @@
 <template>
     <div class="kui-button">
-      <el-button  v-bind="{...$props, ...$attrs}" v-on="$listeners" type="success">{{text}}</el-button>
+      <el-button
+        v-bind="{...$props, ...$attrs}"
+        v-on="$listeners" type="success"
+        :style="{color:color,backgroundColor:backgroundColor }"
+      >{{text}}</el-button>
     </div>
 </template>
 
@@ -18,14 +22,20 @@
           required: false,
           default: ''
         },
+        backgroundColor: {
+          type: String,
+          required: false,
+          default: ''
+        },
       }
     }
 </script>
 
 <style lang="scss" scoped>
-  /deep/{
+ /* /deep/{
     .el-button {
       background-color: #003a00 !important;
     }
-  }
+    .background
+  }*/
 </style>

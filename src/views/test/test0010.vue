@@ -12,7 +12,7 @@
         <div style="margin: 10px 0">
           <el-button size="mini" @click="nodeSave" style="float: right;">保存</el-button>
         </div>
-        <kui-button text="0001" size="small" />
+        <kui-button text="0001" size="small" color="#2b333f" backgroundColor="#66b1ff" />
       </div>
 
     </div>

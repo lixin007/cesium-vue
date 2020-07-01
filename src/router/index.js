@@ -225,6 +225,12 @@ export const constantRoutes = [
         meta: { title: 'canvas', icon: 'table',noCache: false  }
       },
       {
+        path: 'flex',
+        name: 'Flex',
+        component: () => import('@/views/flex'),
+        meta: { title: 'flex', icon: 'table',noCache: false  }
+      },
+      {
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
