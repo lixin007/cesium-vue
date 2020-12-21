@@ -27,7 +27,7 @@
           return {
             data: [{
               id: 1,
-              text: '一级 1',
+              text: '一级 1(test)',
               children: [{
                 id: 4,
                 text: '二级 1-1',
